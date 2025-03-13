@@ -104,7 +104,11 @@ class HomeController extends GetxController {
     }
   }
 
+  var showDescription = false.obs;
 
+  void toggleDescription() {
+    showDescription.value = !showDescription.value;
+  }
 
 
 
@@ -112,7 +116,7 @@ class HomeController extends GetxController {
     PregnancyWeek(
       week: 1,
       babyImagePath: 'assets/week/b1.png',
-      sizeImagePath: 'assets/week/s1.png',
+      sizeImagePath: 'assets/week/s4.png',
       description: 'Your baby is a tiny ball of cells, starting its journey!',
       babyLength: '< 0.1 cm',
       babyWeight: '<0.1 g',
@@ -121,16 +125,16 @@ class HomeController extends GetxController {
     PregnancyWeek(
       week: 2,
       babyImagePath: 'assets/week/b2.png',
-      sizeImagePath: 'assets/week/s2.png',
+      sizeImagePath: 'assets/week/s4.png',
       description: 'Your baby is developing into an embryo with tiny features forming.',
       babyLength: '0.1 cm',
       babyWeight: '< 0.1 g',
-      fruitSize: 'Sesame seed',
+      fruitSize: 'Poppy seed',
     ),
     PregnancyWeek(
       week: 3,
       babyImagePath: 'assets/week/b3.png',
-      sizeImagePath: 'assets/week/s3.png',
+      sizeImagePath: 'assets/week/s4.png',
       description: 'The embryo is now implanting into the uterine wall.',
       babyLength: '0.2 cm',
       babyWeight: '< 1 g',

@@ -91,13 +91,18 @@ class HomeView extends GetView<HomeController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset(
-                        weekData.babyImagePath,
-                        height: 100,
-                        fit: BoxFit.cover,
-                        errorBuilder:
-                            (context, error, stackTrace) =>
-                                Icon(Icons.broken_image, size: 100),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        // Adjust for desired roundness
+                        child: Image.asset(
+                          weekData.babyImagePath,
+                          height: 100,
+                          width: 100, // Ensure width is set
+                          fit: BoxFit.cover,
+                          errorBuilder:
+                              (context, error, stackTrace) =>
+                                  Icon(Icons.broken_image, size: 100),
+                        ),
                       ),
 
                       Image.asset(
@@ -121,7 +126,7 @@ class HomeView extends GetView<HomeController> {
 
                   // Length and Weight
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "Ideal length: ${weekData.babyLength}",
@@ -136,14 +141,13 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 5),
-
-                  // Description
                   Text(
                     weekData.description,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16),
                   ),
+
+                  // Description
                 ],
               ),
             ),
