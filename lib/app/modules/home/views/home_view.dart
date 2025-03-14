@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:pregnancy/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 import 'SetStartDateScreen.dart'; // Updated to match the correct screen name
@@ -91,17 +92,22 @@ class HomeView extends GetView<HomeController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        // Adjust for desired roundness
-                        child: Image.asset(
-                          weekData.babyImagePath,
-                          height: 100,
-                          width: 100, // Ensure width is set
-                          fit: BoxFit.cover,
-                          errorBuilder:
-                              (context, error, stackTrace) =>
-                                  Icon(Icons.broken_image, size: 100),
+                      InkWell(
+                        onTap: (){
+                          Get.toNamed(Routes.BABY_MODEL_WEEK);
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          // Adjust for desired roundness
+                          child: Image.asset(
+                            weekData.babyImagePath,
+                            height: 100,
+                            width: 100, // Ensure width is set
+                            fit: BoxFit.cover,
+                            errorBuilder:
+                                (context, error, stackTrace) =>
+                                    Icon(Icons.broken_image, size: 100),
+                          ),
                         ),
                       ),
 
