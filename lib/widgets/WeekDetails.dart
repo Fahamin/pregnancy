@@ -18,8 +18,8 @@ class WeekDetails extends StatelessWidget {
         Image.asset(
           imagePath,
           width: double.infinity,
-          height: 150,
-          fit: BoxFit.cover,
+          height: 300,
+          fit: BoxFit.fill,
         ),
         // Display the details text
         Padding(
