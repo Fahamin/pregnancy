@@ -6,10 +6,14 @@ import 'package:pregnancy/app/routes/app_pages.dart';
 
 import '../../../../widgets/container_item.dart';
 import '../../../../widgets/container_vertical.dart';
+import '../../mother_care/controllers/mother_care_controller.dart';
 import '../controllers/home_controller.dart';
 import 'SetStartDateScreen.dart'; // Updated to match the correct screen name
 
 class HomeView extends GetView<HomeController> {
+
+  final MotherCareController motherCareController = Get.find();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +42,7 @@ class HomeView extends GetView<HomeController> {
         return Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding:  EdgeInsets.all(16.0),
               child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -135,13 +139,15 @@ class HomeView extends GetView<HomeController> {
                                 (context, error, stackTrace) =>
                                     Icon(Icons.broken_image, size: 100),
                           ),
-                          Image.asset(
-                            weekData.sizeImagePath,
-                            height: 100,
-                            fit: BoxFit.cover,
-                            errorBuilder:
-                                (context, error, stackTrace) =>
-                                    Icon(Icons.broken_image, size: 100),
+                          Expanded(
+                            child: Image.asset(
+                              weekData.sizeImagePath,
+                              height: 100,
+                              fit: BoxFit.cover,
+                              errorBuilder:
+                                  (context, error, stackTrace) =>
+                                      Icon(Icons.broken_image, size: 100),
+                            ),
                           ),
                         ],
                       ),
@@ -182,14 +188,14 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Column(
                     children: [
-                      PregnancyContainer("assets/week/b3.png", "pp"),
-
+                      PregnancyContainer("assets/other/pr.png", "Pregnancy Risk"),
                       SizedBox(height: 11),
-                      PregnancyContainer("assets/week/b3.png", "pp"),
+                      PregnancyContainer("assets/other/mb.png", "Mother Health"),
                     ],
                   ),
                   InkWell(onTap:() {
-
+                    motherCareController.fetchWeekData(controller.currentWeek.value);
+                    Get.toNamed(Routes.MOTHER_CARE);
                   },child: PregnancyContainerVer("assets/other/mc.png", "Mother's Care")),
                 ],
               ),

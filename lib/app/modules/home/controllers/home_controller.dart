@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../model/PregnancyWeek.dart';
+import '../../../../model/pregnency_week_model.dart';
 
 class HomeController extends GetxController {
 

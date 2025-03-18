@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
         initialBinding: HomeBinding(),
         debugShowCheckedModeBanner: false,
         initialRoute: AppPages.INITIAL,
-        getPages: AppPages.routes, // Set the initial binding
+        getPages: AppPages.routes,
+        // Set the initial binding
       ),
     );
   }

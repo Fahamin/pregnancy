@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:pregnancy/app/modules/home/controllers/home_controller.dart';
 
 import '../app/routes/app_pages.dart';
-import '../model/PregnancyWeek.dart';
+import '../model/pregnency_week_model.dart';
 
 class HomeChart extends StatelessWidget {
   final HomeController controller;
