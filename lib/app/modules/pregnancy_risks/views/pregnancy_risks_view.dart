@@ -9,9 +9,7 @@ class PregnancyRisksView extends GetView<PregnancyRisksController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Pregnancy Risks'),
-      ),
+      appBar: AppBar(title: Text('Pregnancy Risks')),
       body: ListView.builder(
         itemCount: controller.pregnancyRisk.length,
         itemBuilder: (context, index) {
@@ -37,12 +35,19 @@ class ExpandableItem extends StatelessWidget {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         children: [
+          Center(
+            child: Image.asset(
+              item.imagePath,
+              fit: BoxFit.fill,
+              errorBuilder:
+                  (context, error, stackTrace) =>
+                      Icon(Icons.broken_image, size: 100),
+            ),
+          ),
+
           Padding(
             padding: EdgeInsets.all(16.0),
-            child: Text(
-              item.description,
-              style: TextStyle(fontSize: 16),
-            ),
+            child: Text(item.description, style: TextStyle(fontSize: 16)),
           ),
         ],
       ),

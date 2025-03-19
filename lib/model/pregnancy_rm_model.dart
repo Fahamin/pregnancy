@@ -1,6 +1,8 @@
-class PregnancyRiskModel {
-  final String header;
-  final String description;
 
-  PregnancyRiskModel({required this.header, required this.description});
+class PregnancyRiskModel {
+   var header;
+   var description;
+   var imagePath;
+
+  PregnancyRiskModel(this.header,   this.imagePath, this.description);
 }

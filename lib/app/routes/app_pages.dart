@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../MaternalHealthPage.dart';
+import '../PregnancyQAPage.dart';
 import '../modules/baby_model_week/bindings/baby_model_week_binding.dart';
 import '../modules/baby_model_week/views/baby_model_week_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -17,11 +19,7 @@ class AppPages {
   static const INITIAL = Routes.HOME;
 
   static final routes = [
-    GetPage(
-      name: _Paths.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
-    ),
+    GetPage(name: _Paths.HOME, page: () => HomeView(), binding: HomeBinding()),
     GetPage(
       name: _Paths.BABY_MODEL_WEEK,
       page: () => BabyModelWeekView(),
@@ -34,8 +32,16 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PREGNANCY_RISKS,
-      page: () =>  PregnancyRisksView(),
+      page: () => PregnancyRisksView(),
       binding: PregnancyRisksBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOTHER_HELTH,
+      page: () => MaternalHealthPage(),
+    ),
+    GetPage(
+      name: _Paths.ANSWERQUES,
+      page: () => PregnancyQAPage(),
     ),
   ];
 }

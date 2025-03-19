@@ -7,6 +7,9 @@ abstract class Routes {
   static const BABY_MODEL_WEEK = _Paths.BABY_MODEL_WEEK;
   static const MOTHER_CARE = _Paths.MOTHER_CARE;
   static const PREGNANCY_RISKS = _Paths.PREGNANCY_RISKS;
+  static const MOTHER_HELTH = _Paths.MOTHER_HELTH;
+  static const ANSWERQUES = _Paths.ANSWERQUES;
+
 }
 
 abstract class _Paths {
@@ -15,4 +18,7 @@ abstract class _Paths {
   static const BABY_MODEL_WEEK = '/baby-model-week';
   static const MOTHER_CARE = '/mother-care';
   static const PREGNANCY_RISKS = '/pregnancy-risks';
+  static const MOTHER_HELTH = '/mother-health';
+  static const ANSWERQUES = '/anser-ques';
+
 }
