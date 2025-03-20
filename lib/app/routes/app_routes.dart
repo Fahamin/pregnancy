@@ -9,6 +9,8 @@ abstract class Routes {
   static const PREGNANCY_RISKS = _Paths.PREGNANCY_RISKS;
   static const MOTHER_HELTH = _Paths.MOTHER_HELTH;
   static const ANSWERQUES = _Paths.ANSWERQUES;
+  static const FATHER_DUTY = _Paths.FATHER_DUTY;
+  static const FOOD = _Paths.FOOD;
 
 }
 
@@ -20,5 +22,7 @@ abstract class _Paths {
   static const PREGNANCY_RISKS = '/pregnancy-risks';
   static const MOTHER_HELTH = '/mother-health';
   static const ANSWERQUES = '/anser-ques';
+  static const FATHER_DUTY = '/father-duty';
+  static const FOOD = '/food-nu';
 
 }

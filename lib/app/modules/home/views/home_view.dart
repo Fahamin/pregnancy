@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:pregnancy/app/modules/father_duty/controllers/father_duty_controller.dart';
 import 'package:pregnancy/app/routes/app_pages.dart';
 
 import '../../../../widgets/RowItem.dart';
@@ -13,6 +14,7 @@ import 'SetStartDateScreen.dart'; // Updated to match the correct screen name
 
 class HomeView extends GetView<HomeController> {
   final MotherCareController motherCareController = Get.find();
+  final FatherDutyController fatherDutyController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -230,12 +232,28 @@ class HomeView extends GetView<HomeController> {
               Padding(
                 padding: EdgeInsets.all(16),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
                       onTap: () {
                         Get.toNamed(Routes.ANSWERQUES);
                       },
-                      child: RowItem("assets/other/mc.png", "FAQ"),
+                      child: RowItem("assets/other/faq.png", "FAQ"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        fatherDutyController.fetchWeekData(
+                          controller.currentWeek.value,
+                        );
+                        Get.toNamed(Routes.FATHER_DUTY);
+                      },
+                      child: RowItem("assets/other/baby.png", "Father Duty"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.FOOD);
+                      },
+                      child: RowItem("assets/other/diet.png", "Foods"),
                     ),
                   ],
                 ),

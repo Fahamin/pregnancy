@@ -2,8 +2,11 @@ import 'package:get/get.dart';
 
 import '../MaternalHealthPage.dart';
 import '../PregnancyQAPage.dart';
+import '../food_nutrtion.dart';
 import '../modules/baby_model_week/bindings/baby_model_week_binding.dart';
 import '../modules/baby_model_week/views/baby_model_week_view.dart';
+import '../modules/father_duty/bindings/father_duty_binding.dart';
+import '../modules/father_duty/views/father_duty_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/mother_care/bindings/mother_care_binding.dart';
@@ -35,13 +38,14 @@ class AppPages {
       page: () => PregnancyRisksView(),
       binding: PregnancyRisksBinding(),
     ),
+    GetPage(name: _Paths.MOTHER_HELTH, page: () => MaternalHealthPage()),
+    GetPage(name: _Paths.ANSWERQUES, page: () => PregnancyQAPage()),
     GetPage(
-      name: _Paths.MOTHER_HELTH,
-      page: () => MaternalHealthPage(),
+      name: _Paths.FATHER_DUTY,
+      page: () => FatherDutyView(),
+      binding: FatherDutyBinding(),
     ),
-    GetPage(
-      name: _Paths.ANSWERQUES,
-      page: () => PregnancyQAPage(),
-    ),
+    GetPage(name: _Paths.FOOD, page: () => PregnancyNutritionGuide()),
+
   ];
 }
