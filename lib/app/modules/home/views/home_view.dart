@@ -19,21 +19,12 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Obx(() => Text('Week ${controller.currentWeek.value}')),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.calendar_today),
-            onPressed: () {
-              Get.to(
-                SetDeliveryDateScreen(),
-              ); // Navigate to the delivery date picker screen
-            },
-          ),
-        ],
-      ),
+
+      appBar: AppBar(title: Text("Safe Pregnancy"), centerTitle: true),
       body: Obx(() {
         final weekData = controller.currentWeekData;
+        final weekTip = controller.currentWeekTipData;
+
         final startDate = DateFormat(
           'dd MMM yyyy',
         ).format(controller.pregnancyStartDate.value);
@@ -99,13 +90,25 @@ class HomeView extends GetView<HomeController> {
                         ),
 
                         SizedBox(height: 2),
-                        Text(
-                          'Estimated Delivery Date: $deliveryDate',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.redAccent,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Estimated Delivery Date: $deliveryDate',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.redAccent,
+                              ),
+                            ),
+                            IconButton(
+                              color: Colors.blue,
+                              icon: Icon(Icons.edit_calendar_sharp),
+                              onPressed: () {
+                                showDeliveryDateDialog(context, controller);
+                              },
+                            ),
+                          ],
                         ),
                         SizedBox(height: 5),
 
@@ -258,10 +261,86 @@ class HomeView extends GetView<HomeController> {
                   ],
                 ),
               ),
+
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: [
+                      Text(
+                        "Weekly Tips",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(16),
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: Text(
+                          weekTip.tip,
+                        ), // Any content passed as a widget
+                      ),
+                    ],
+                  ),
+                ),
+
+                // White Background Section
+              ),
             ],
           ),
         );
       }),
     );
   }
+}
+
+void showDeliveryDateDialog(BuildContext context, HomeController controller) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        content: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Obx(
+                () => Text(
+                  'Selected Date: ${controller.deliveryDate.value.toLocal().toString().split(' ')[0]}',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () async {
+                  final selectedDate = await showDatePicker(
+                    context: context,
+                    initialDate: controller.deliveryDate.value,
+                    firstDate: DateTime.now().subtract(Duration(days: 365)),
+                    lastDate: DateTime.now().add(Duration(days: 365)),
+                  );
+                  if (selectedDate != null) {
+                    await controller.saveDeliveryDate(
+                      selectedDate,
+                    ); // Save delivery date
+                    Get.back(); // Close the dialog
+                  }
+                },
+                child: Text('Select Delivery Date'),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }
