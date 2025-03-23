@@ -19,7 +19,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(title: Text("Safe Pregnancy"), centerTitle: true),
       body: Obx(() {
         final weekData = controller.currentWeekData;
@@ -261,7 +260,6 @@ class HomeView extends GetView<HomeController> {
                   ],
                 ),
               ),
-
               Padding(
                 padding: EdgeInsets.all(16),
                 child: Container(
@@ -295,6 +293,32 @@ class HomeView extends GetView<HomeController> {
                 ),
 
                 // White Background Section
+              ),
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.PPROBLEMS);
+                      },
+                      child: RowItem("assets/other/faq.png", "Problems&Doing"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.BABY_DEVELOPMENT);
+                      },
+                      child: RowItem("assets/other/baby.png", "BabyDevelopment"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.FOOD);
+                      },
+                      child: RowItem("assets/other/diet.png", "Foods"),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

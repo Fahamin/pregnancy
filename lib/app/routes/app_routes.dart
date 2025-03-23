@@ -11,7 +11,8 @@ abstract class Routes {
   static const ANSWERQUES = _Paths.ANSWERQUES;
   static const FATHER_DUTY = _Paths.FATHER_DUTY;
   static const FOOD = _Paths.FOOD;
-
+  static const PPROBLEMS = _Paths.PPROBLEMS;
+  static const BABY_DEVELOPMENT = _Paths.BABY_DEVELOPMENT;
 }
 
 abstract class _Paths {
@@ -24,5 +25,7 @@ abstract class _Paths {
   static const ANSWERQUES = '/anser-ques';
   static const FATHER_DUTY = '/father-duty';
   static const FOOD = '/food-nu';
+  static const PPROBLEMS = '/problem';
+  static const BABY_DEVELOPMENT = '/babydevelopment';
 
 }
