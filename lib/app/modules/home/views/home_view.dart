@@ -90,7 +90,8 @@ class HomeView extends GetView<HomeController> {
 
                         SizedBox(height: 2),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.end,
+
                           children: [
                             Text(
                               'Estimated Delivery Date: $deliveryDate',
@@ -100,20 +101,22 @@ class HomeView extends GetView<HomeController> {
                                 color: Colors.redAccent,
                               ),
                             ),
-                            IconButton(
-                              color: Colors.blue,
-                              icon: Icon(Icons.edit_calendar_sharp),
-                              onPressed: () {
-                                showDeliveryDateDialog(context, controller);
-                              },
+                            Expanded(
+                              child: IconButton(
+                                color: Colors.blue,
+                                icon: Icon(Icons.edit_calendar_sharp),
+                                onPressed: () {
+                                  showDeliveryDateDialog(context, controller);
+                                },
+                              ),
                             ),
                           ],
                         ),
                         SizedBox(height: 5),
 
                         Text(
-                          "The baby is now the size of a: ${weekData.fruitSize}",
-                          style: TextStyle(fontSize: 14),
+                          "The size of the baby is a: ${weekData.fruitSize}",
+                          style: TextStyle(fontSize: 14),  textAlign: TextAlign.center,
                         ),
 
                         Row(
@@ -286,6 +289,7 @@ class HomeView extends GetView<HomeController> {
                         decoration: BoxDecoration(color: Colors.white),
                         child: Text(
                           weekTip.tip,
+                          textAlign: TextAlign.center,
                         ), // Any content passed as a widget
                       ),
                     ],
@@ -303,13 +307,13 @@ class HomeView extends GetView<HomeController> {
                       onTap: () {
                         Get.toNamed(Routes.PPROBLEMS);
                       },
-                      child: RowItem("assets/other/faq.png", "Problems&Doing"),
+                      child: RowItem("assets/other/faq.png", "Problems Doing"),
                     ),
                     InkWell(
                       onTap: () {
                         Get.toNamed(Routes.BABY_DEVELOPMENT);
                       },
-                      child: RowItem("assets/other/baby.png", "BabyDevelopment"),
+                      child: RowItem("assets/other/baby.png", "3D Model"),
                     ),
                     InkWell(
                       onTap: () {

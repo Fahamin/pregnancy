@@ -67,6 +67,7 @@ flutter:
     - assets/other/
     - assets/mother/
     - assets/risk/
+    - assets/dev/
 
   #   - images/a_dot_ham.jpeg
 

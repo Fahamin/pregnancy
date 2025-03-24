@@ -38,7 +38,7 @@ class RowItem extends StatelessWidget {
                 (context, error, stackTrace) =>
                     Icon(Icons.broken_image, size: 100),
           ),
-          Padding(padding: EdgeInsets.all(4.0), child: Text(title)),
+          Padding(padding: EdgeInsets.all(4.0), child: Text(title,  textAlign: TextAlign.center,)),
         ],
       ),
     );
