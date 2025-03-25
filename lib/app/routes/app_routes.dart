@@ -14,6 +14,7 @@ abstract class Routes {
   static const PPROBLEMS = _Paths.PPROBLEMS;
   static const BABY_DEVELOPMENT = _Paths.BABY_DEVELOPMENT;
   static const BEAUTYWOMER = _Paths.BEAUTYWOMER;
+  static const SET_DATE = _Paths.SET_DATE;
 
 }
 
@@ -30,4 +31,6 @@ abstract class _Paths {
   static const PPROBLEMS = '/problem';
   static const BABY_DEVELOPMENT = '/babydevelopment';
   static const BEAUTYWOMER = '/beautywomer';
+  static const SET_DATE = '/set_date';
+
 }

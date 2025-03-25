@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pregnancy/app/modules/home/views/SetStartDateScreen.dart';
 
 import '../BeautyHomePage.dart';
 import '../MaternalHealthPage.dart';
@@ -30,28 +31,72 @@ class AppPages {
       name: _Paths.BABY_MODEL_WEEK,
       page: () => BabyModelWeekView(),
       binding: BabyModelWeekBinding(),
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.MOTHER_CARE,
       page: () => MotherCareView(),
       binding: MotherCareBinding(),
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.PREGNANCY_RISKS,
       page: () => PregnancyRisksView(),
       binding: PregnancyRisksBinding(),
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
     ),
-    GetPage(name: _Paths.MOTHER_HELTH, page: () => MaternalHealthPage()),
-    GetPage(name: _Paths.ANSWERQUES, page: () => PregnancyQAPage()),
-    GetPage(name: _Paths.BABY_DEVELOPMENT, page: () => BabyDevelopment()),
-    GetPage(name: _Paths.PPROBLEMS, page: () => ProblemsDoing()),
-    GetPage(name: _Paths.BEAUTYWOMER, page: () => BeautyHomePage()),
+    GetPage(
+      name: _Paths.MOTHER_HELTH,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => MaternalHealthPage(),
+    ),
+    GetPage(
+      name: _Paths.ANSWERQUES,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => PregnancyQAPage(),
+    ),
+    GetPage(
+      name: _Paths.BABY_DEVELOPMENT,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => BabyDevelopment(),
+    ),
+    GetPage(
+      name: _Paths.PPROBLEMS,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => ProblemsDoing(),
+    ),
+    GetPage(
+      name: _Paths.BEAUTYWOMER,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => BeautyHomePage(),
+    ),
+    GetPage(
+      name: _Paths.SET_DATE,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => SetDeliveryDateScreen(),
+    ),
 
     GetPage(
       name: _Paths.FATHER_DUTY,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
       page: () => FatherDutyView(),
       binding: FatherDutyBinding(),
     ),
-    GetPage(name: _Paths.FOOD, page: () => PregnancyNutritionGuide()),
+    GetPage(
+      name: _Paths.FOOD,
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
+      page: () => PregnancyNutritionGuide(),
+    ),
   ];
 }

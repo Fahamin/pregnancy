@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../app/routes/app_pages.dart';
 
 class CustomNavigationDrawer extends StatelessWidget {
-   CustomNavigationDrawer({super.key});
+  CustomNavigationDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +17,7 @@ class CustomNavigationDrawer extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Colors.pinkAccent,
-              Colors.pinkAccent,
-            ],
+            colors: [Colors.pinkAccent, Colors.pinkAccent],
           ),
         ),
         child: Column(
@@ -25,35 +26,28 @@ class CustomNavigationDrawer extends StatelessWidget {
             Container(
               height: 200,
               width: double.infinity,
-              padding:  EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   CircleAvatar(
+                  CircleAvatar(
                     radius: 40,
                     backgroundColor: Colors.white24,
-                    child: Icon(
-                      Icons.person,
-                      size: 40,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.person, size: 40, color: Colors.white),
                   ),
-                   SizedBox(height: 16),
+                  SizedBox(height: 16),
                   Text(
-                    'John Doe',
+                    'Safe Pregnancy',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                   SizedBox(height: 4),
+                  SizedBox(height: 4),
                   Text(
-                    'john.doe@example.com',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
+                    'Safe Journey',
+                    style: TextStyle(color: Colors.white70, fontSize: 14),
                   ),
                 ],
               ),
@@ -68,10 +62,10 @@ class CustomNavigationDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       context,
                       icon: Icons.home,
-                      title: 'Home',
+                      title: 'Set Delivery Date',
                       onTap: () {
-                        Navigator.pop(context);
-                        // Add navigation logic here
+                        Get.back();
+                        Get.toNamed(Routes.SET_DATE);
                       },
                     ),
                     _buildDrawerItem(
@@ -92,7 +86,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                         // Add navigation logic here
                       },
                     ),
-                     Divider(height: 1),
+                    Divider(height: 1),
                     _buildDrawerItem(
                       context,
                       icon: Icons.logout,
@@ -113,30 +107,21 @@ class CustomNavigationDrawer extends StatelessWidget {
   }
 
   Widget _buildDrawerItem(
-      BuildContext context, {
-        required IconData icon,
-        required String title,
-        required var onTap,
-      }) {
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required var onTap,
+  }) {
     return ListTile(
-      leading: Icon(
-        icon,
-        color: Colors.blue.shade700,
-      ),
+      leading: Icon(icon, color: Colors.blue.shade700),
       title: Text(
         title,
-        style: TextStyle(
-          color: Colors.grey.shade800,
-          fontSize: 16,
-        ),
+        style: TextStyle(color: Colors.grey.shade800, fontSize: 16),
       ),
       onTap: onTap,
       hoverColor: Colors.blue.shade50,
       tileColor: Colors.white,
-      contentPadding:  EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 4,
-      ),
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
     );
   }
 }
