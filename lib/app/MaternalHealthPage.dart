@@ -5,7 +5,10 @@ class MaternalHealthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Maternal Health')),
+      appBar: AppBar(
+        title: Text('Maternal Health'),
+        
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(

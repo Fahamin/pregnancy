@@ -14,6 +14,7 @@ class BabyModelWeekView extends GetView<BabyModelWeekController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Pregnancy Week by Week'),
+        
         centerTitle: true,
       ),
       body: ListView.builder(

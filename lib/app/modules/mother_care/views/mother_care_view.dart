@@ -16,7 +16,7 @@ class MotherCareView extends GetView<MotherCareController> {
         centerTitle: true,
       ),
       body: Padding(
-        padding:  EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,6 +30,7 @@ class MotherCareView extends GetView<MotherCareController> {
 
             Center(
               child: Image.asset(
+
                 controller.selectedWeek!.sizeImagePath,
                 fit: BoxFit.fill,
                 errorBuilder:

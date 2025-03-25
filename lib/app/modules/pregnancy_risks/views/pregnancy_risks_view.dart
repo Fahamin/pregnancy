@@ -9,7 +9,8 @@ class PregnancyRisksView extends GetView<PregnancyRisksController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pregnancy Risks')),
+      appBar: AppBar(title: Text('Pregnancy Risks'),
+        ),
       body: ListView.builder(
         itemCount: controller.pregnancyRisk.length,
         itemBuilder: (context, index) {

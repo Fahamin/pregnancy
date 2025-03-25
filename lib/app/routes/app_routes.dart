@@ -13,6 +13,8 @@ abstract class Routes {
   static const FOOD = _Paths.FOOD;
   static const PPROBLEMS = _Paths.PPROBLEMS;
   static const BABY_DEVELOPMENT = _Paths.BABY_DEVELOPMENT;
+  static const BEAUTYWOMER = _Paths.BEAUTYWOMER;
+
 }
 
 abstract class _Paths {
@@ -27,5 +29,5 @@ abstract class _Paths {
   static const FOOD = '/food-nu';
   static const PPROBLEMS = '/problem';
   static const BABY_DEVELOPMENT = '/babydevelopment';
-
+  static const BEAUTYWOMER = '/beautywomer';
 }

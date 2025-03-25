@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:pregnancy/app/modules/father_duty/controllers/father_duty_controller.dart';
 import 'package:pregnancy/app/routes/app_pages.dart';
 
+import '../../../../widgets/custom_nav_drawer.dart';
 import '../../../../widgets/RowItem.dart';
 import '../../../../widgets/container_item.dart';
 import '../../../../widgets/container_vertical.dart';
@@ -19,7 +20,12 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Safe Pregnancy"), centerTitle: true),
+      drawer: CustomNavigationDrawer(),
+      appBar: AppBar(
+        title: Text("Safe Pregnancy"),
+        
+        centerTitle: true,
+      ),
       body: Obx(() {
         final weekData = controller.currentWeekData;
         final weekTip = controller.currentWeekTipData;
@@ -116,7 +122,8 @@ class HomeView extends GetView<HomeController> {
 
                         Text(
                           "The size of the baby is a: ${weekData.fruitSize}",
-                          style: TextStyle(fontSize: 14),  textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 14),
+                          textAlign: TextAlign.center,
                         ),
 
                         Row(
@@ -241,24 +248,27 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Routes.ANSWERQUES);
+                        Get.toNamed(Routes.PPROBLEMS);
                       },
-                      child: RowItem("assets/other/faq.png", "FAQ"),
+                      child: RowItem(
+                        "assets/other/problem.png",
+                        "Problems Doing",
+                      ),
                     ),
                     InkWell(
                       onTap: () {
-                        fatherDutyController.fetchWeekData(
-                          controller.currentWeek.value,
-                        );
-                        Get.toNamed(Routes.FATHER_DUTY);
+                        Get.toNamed(Routes.BABY_DEVELOPMENT);
                       },
-                      child: RowItem("assets/other/baby.png", "Father Duty"),
+                      child: RowItem("assets/other/three.png", "3D Model"),
                     ),
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Routes.FOOD);
+                        Get.toNamed(Routes.BEAUTYWOMER);
                       },
-                      child: RowItem("assets/other/diet.png", "Foods"),
+                      child: RowItem(
+                        "assets/other/skincare.png",
+                        "Pregnancy Beauty",
+                      ),
                     ),
                   ],
                 ),
@@ -268,7 +278,7 @@ class HomeView extends GetView<HomeController> {
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   alignment: Alignment.center,
@@ -305,15 +315,18 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Routes.PPROBLEMS);
+                        Get.toNamed(Routes.ANSWERQUES);
                       },
-                      child: RowItem("assets/other/faq.png", "Problems Doing"),
+                      child: RowItem("assets/other/faq.png", "FAQ"),
                     ),
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Routes.BABY_DEVELOPMENT);
+                        fatherDutyController.fetchWeekData(
+                          controller.currentWeek.value,
+                        );
+                        Get.toNamed(Routes.FATHER_DUTY);
                       },
-                      child: RowItem("assets/other/baby.png", "3D Model"),
+                      child: RowItem("assets/other/baby.png", "Father Duty"),
                     ),
                     InkWell(
                       onTap: () {

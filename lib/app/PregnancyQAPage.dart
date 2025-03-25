@@ -130,6 +130,7 @@ class PregnancyQAPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Pregnancy Q&A'),
+        
       ),
       body: ListView.builder(
         padding: EdgeInsets.all(16.0),

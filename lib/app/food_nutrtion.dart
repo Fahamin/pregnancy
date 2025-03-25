@@ -2,169 +2,193 @@ import 'package:flutter/material.dart';
 
 class PregnancyNutritionGuide extends StatelessWidget {
   // Week-by-week food and nutrition data
-  final Map<String, Map<String, List<String>>> trimesterData = {
-    "First Trimester (Weeks 1–12)": {
-      "Nutrition": [
-        "Weeks 1–4: Leafy greens, fortified cereals, oranges, beans (folic acid).",
-        "Weeks 5–8: Eggs, lean meats, nuts, seeds (protein and iron).",
-        "Weeks 9–12: Ginger tea, whole grains, bananas, yogurt (nausea relief).",
-      ],
-      "Fruits": [
-        "Oranges",
-        "Bananas",
-        "Berries",
-      ],
-    },
-    "Second Trimester (Weeks 13–27)": {
-      "Nutrition": [
-        "Weeks 13–16: Dairy, fortified plant-based milk, leafy greens (calcium).",
-        "Weeks 17–20: Salmon, walnuts, chia seeds, flaxseeds (omega-3s).",
-        "Weeks 21–24: Lean meats, lentils, chickpeas, tofu (protein).",
-        "Weeks 25–27: Eggs, fortified cereals, citrus fruits (iron and vitamin C).",
-      ],
-      "Fruits": [
-        "Citrus fruits",
-        "Apples",
-        "Pears",
-      ],
-    },
-    "Third Trimester (Weeks 28–40)": {
-      "Nutrition": [
-        "Weeks 28–32: Red meat, spinach, pumpkin seeds, dried fruits (iron).",
-        "Weeks 33–36: Whole grains, apples, pears, berries (fiber).",
-        "Weeks 37–40: Avocado, nuts, seeds, olive oil (healthy fats).",
-      ],
-      "Fruits": [
-        "Apples",
-        "Pears",
-        "Berries",
-        "Avocado",
-      ],
-    },
-  };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Food & Nutrition ",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        elevation: 10,
-      ),
-      body: ListView(
-        children: trimesterData.entries.map((entry) {
-          return Card(
-            margin: EdgeInsets.all(10),
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: ExpansionTile(
-              leading: Icon(
-                _getTrimesterIcon(entry.key),
-                
-              ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: 250,
+            flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                entry.key,
+                "Food & Nutrition",
                 style: TextStyle(
-                  fontSize: 18,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
 
                 ),
               ),
-              children: [
-                // Nutrition Section
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Text(
-                    "Nutrition Tips:",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-
-                    ),
-                  ),
-                ),
-                ...entry.value["Nutrition"]!.map((food) {
-                  return Column(
-                    children: [
-                      Divider(
-                        height: 1,
-                        color: Colors.grey[300],
-                      ),
-                      ListTile(
-                        leading: Icon(
-                          Icons.arrow_forward_ios,
-                          size: 16,
-                          
-                        ),
-                        title: Text(
-                          food,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey[700],
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                }).toList(),
-
-                // Fruits Section
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Text(
-                    "Recommended Fruits:",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-
-                    ),
-                  ),
-                ),
-                ...entry.value["Fruits"]!.map((fruit) {
-                  return Column(
-                    children: [
-                      Divider(
-                        height: 1,
-                        color: Colors.grey[300],
-                      ),
-                      ListTile(
-                        leading: Icon(
-                          Icons.local_florist,
-                          size: 16,
-                          
-                        ),
-                        title: Text(
-                          fruit,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey[700],
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                }).toList(),
-              ],
+              background: Image.asset(
+                'assets/other/foodn.png', // Replace with your image
+                fit: BoxFit.cover,
+              ),
             ),
-          );
-        }).toList(),
+            pinned: true,
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Foods For Pregnancy Journey",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.pink,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Eating good, nutritious food during pregnancy is crucial because it directly impacts the health of both the mother and the developing baby. Here’s why a balanced and healthy diet is essential during this journey',
+                    style: TextStyle(fontSize: 16, height: 1.5),
+                  ),
+                  _buildSectionTitle('First Trimester (Weeks 1–12)'),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 1–4',
+                    description:
+                        'Leafy greens, fortified cereals, oranges, beans (folic acid).',
+                  ),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 5–8',
+                    description:
+                        'Eggs, lean meats, nuts, seeds (protein and iron).',
+                  ),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 9–12',
+                    description:
+                        'Ginger tea, whole grains, bananas, yogurt (nausea relief).',
+                  ),
+                  SizedBox(height: 20),
+                  _buildSectionTitle('Second Trimester (Weeks 13–27)'),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 13–16',
+                    description:
+                        'Dairy, fortified plant-based milk, leafy greens (calcium).',
+                  ),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 17-20',
+                    description:
+                        'Salmon, walnuts, chia seeds, flaxseeds (omega-3s).',
+                  ),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 21–24',
+                    description:
+                        'Lean meats, lentils, chickpeas, tofu (protein).',
+                  ),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 25–27',
+                    description:
+                        'Eggs, fortified cereals, citrus fruits (iron and vitamin C).',
+                  ),
+                  SizedBox(height: 20),
+                  _buildSectionTitle('Third Trimester (Weeks 28–40)'),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 28–32',
+                    description:
+                        'Red meat, spinach, pumpkin seeds, dried fruits (iron).',
+                  ),
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 33–36',
+                    description:
+                        'Whole grains, apples, pears, berries (fiber).',
+                  ),
+
+                  _buildBeautyTip(
+                    icon: Icons.water_drop,
+                    title: 'Weeks 37–40',
+                    description:
+                        'Avocado, nuts, seeds, olive oil (healthy fats).',
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  // Helper function to get trimester-specific icons
-  IconData _getTrimesterIcon(String trimester) {
-    if (trimester.contains("First")) {
-      return Icons.child_friendly;
-    } else if (trimester.contains("Second")) {
-      return Icons.child_care;
-    } else {
-      return Icons.accessible_forward;
-    }
+  Widget _buildBulletPoint(String text) {
+    return Padding(
+      padding: EdgeInsets.only(left: 16.0, bottom: 4.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('• ', style: TextStyle(fontSize: 16)),
+          Expanded(
+            child: Text(text, style: TextStyle(fontSize: 16, height: 1.5)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10.0),
+      child: Text(
+        title,
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.deepPurple,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBeautyTip({
+    required IconData icon,
+    required String title,
+    required String description,
+  }) {
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 8),
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: EdgeInsets.all(12.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.pink.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: Colors.pink),
+            ),
+            SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 4),
+                  Text(description, style: TextStyle(fontSize: 14)),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

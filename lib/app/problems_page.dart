@@ -92,8 +92,8 @@ class ProblemsDoing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pregnancy Guide"),
-        backgroundColor: Colors.pink[100],
+        title: Text("Problems & Things to Do"),
+        
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),

@@ -227,7 +227,8 @@ class _BabyDevelopmentState extends State<BabyDevelopment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Baby Development')),
+      appBar: AppBar(title: Text('Baby Development'),
+        ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -276,31 +277,35 @@ class _BabyDevelopmentState extends State<BabyDevelopment> {
             SizedBox(height: 20),
             if (selectedWeekIndex != null)
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
+                child:
+                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 10),
                       InteractiveViewer(
-                        boundaryMargin: EdgeInsets.all(20.0), // Optional, for panning beyond boundaries
-                        minScale: 1.0, // Minimum zoom scale
-                        maxScale: 5.0, // Maximum zoom scale
+                        boundaryMargin: EdgeInsets.all(20.0),
+                        // Optional, for panning beyond boundaries
+                        minScale: 1.0,
+                        // Minimum zoom scale
+                        maxScale: 5.0,
+                        // Maximum zoom scale
                         child: Image.asset(
                           pregnancyData[selectedWeekIndex!].imagePath,
-                          width: double.infinity,
-                          height: 450,
-                          fit: BoxFit.cover,
+                          height: 400,
+                          fit: BoxFit.fill,
                         ),
                       ),
                       SizedBox(height: 10),
-                      Text(
-                        pregnancyData[selectedWeekIndex!].details,
-                        style: TextStyle(fontSize: 16),
+                      Expanded(
+                        child: Text(
+                          pregnancyData[selectedWeekIndex!].details,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
-                ),
+
               ),
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../BeautyHomePage.dart';
 import '../MaternalHealthPage.dart';
 import '../PregnancyQAPage.dart';
 import '../baby_development_screen.dart';
@@ -44,6 +45,7 @@ class AppPages {
     GetPage(name: _Paths.ANSWERQUES, page: () => PregnancyQAPage()),
     GetPage(name: _Paths.BABY_DEVELOPMENT, page: () => BabyDevelopment()),
     GetPage(name: _Paths.PPROBLEMS, page: () => ProblemsDoing()),
+    GetPage(name: _Paths.BEAUTYWOMER, page: () => BeautyHomePage()),
 
     GetPage(
       name: _Paths.FATHER_DUTY,
