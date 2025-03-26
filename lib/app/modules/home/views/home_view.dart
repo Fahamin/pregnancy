@@ -141,7 +141,7 @@ class HomeView extends GetView<HomeController> {
                                   weekData.babyImagePath,
                                   height: 100,
                                   width: 100, // Ensure width is set
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fill,
                                   errorBuilder:
                                       (context, error, stackTrace) =>
                                           Icon(Icons.broken_image, size: 100),

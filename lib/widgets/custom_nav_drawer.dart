@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:in_app_review/in_app_review.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../app/routes/app_pages.dart';
 
@@ -31,11 +33,8 @@ class CustomNavigationDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.white24,
-                    child: Icon(Icons.person, size: 40, color: Colors.white),
-                  ),
+                   Image.asset("assets/other/pre.png",height: 60,),
+
                   SizedBox(height: 16),
                   Text(
                     'Safe Pregnancy',
@@ -61,7 +60,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                   children: [
                     _buildDrawerItem(
                       context,
-                      icon: Icons.home,
+                      icon: Icons.edit_calendar_sharp,
                       title: 'Set Delivery Date',
                       onTap: () {
                         Get.back();
@@ -70,20 +69,20 @@ class CustomNavigationDrawer extends StatelessWidget {
                     ),
                     _buildDrawerItem(
                       context,
-                      icon: Icons.person,
-                      title: 'Profile',
+                      icon: Icons.woman_outlined,
+                      title: 'Beauty Pregnancy',
                       onTap: () {
-                        Navigator.pop(context);
-                        // Add navigation logic here
+                        Get.back();
+                        Get.toNamed(Routes.BEAUTYWOMER);
                       },
                     ),
                     _buildDrawerItem(
                       context,
-                      icon: Icons.settings,
-                      title: 'Settings',
+                      icon: Icons.emoji_food_beverage,
+                      title: 'Food & Nutrition',
                       onTap: () {
-                        Navigator.pop(context);
-                        // Add navigation logic here
+                        Get.back();
+                        Get.toNamed(Routes.FOOD);
                       },
                     ),
                     Divider(height: 1),
@@ -93,7 +92,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                       title: 'Logout',
                       onTap: () {
                         Navigator.pop(context);
-                        // Add logout logic here
+                        openAppStore();
                       },
                     ),
                   ],
@@ -104,6 +103,23 @@ class CustomNavigationDrawer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void openAppStore() async {
+    final String appId = "com.nexus.addons.kodi.tv"; // Replace with your app's package name
+
+    final Uri playStoreUrl =
+    Uri.parse("https://play.google.com/store/apps/details?id=$appId");
+    final Uri appStoreUrl =
+    Uri.parse("https://apps.apple.com/app/idYOUR_APP_STORE_ID"); // Replace YOUR_APP_STORE_ID
+
+    if (await canLaunchUrl(playStoreUrl)) {
+      await launchUrl(playStoreUrl);
+    } else if (await canLaunchUrl(appStoreUrl)) {
+      await launchUrl(appStoreUrl);
+    } else {
+      throw "Could not open store listing";
+    }
   }
 
   Widget _buildDrawerItem(
@@ -125,3 +141,5 @@ class CustomNavigationDrawer extends StatelessWidget {
     );
   }
 }
+
+
