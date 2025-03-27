@@ -88,8 +88,8 @@ class CustomNavigationDrawer extends StatelessWidget {
                     Divider(height: 1),
                     _buildDrawerItem(
                       context,
-                      icon: Icons.logout,
-                      title: 'Logout',
+                      icon: Icons.star,
+                      title: 'Rating',
                       onTap: () {
                         Navigator.pop(context);
                         openAppStore();
