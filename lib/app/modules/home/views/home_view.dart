@@ -317,7 +317,7 @@ class HomeView extends GetView<HomeController> {
                       onTap: () {
                         Get.toNamed(Routes.CLICK_COUNTER);
                       },
-                      child: RowItem("assets/other/leg.png", "Click Counter"),
+                      child: RowItem("assets/other/leg.png", "Cick Counter"),
                     ),
                     InkWell(
                       onTap: () {
