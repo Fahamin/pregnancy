@@ -67,6 +67,18 @@ class CustomNavigationDrawer extends StatelessWidget {
                         Get.toNamed(Routes.SET_DATE);
                       },
                     ),
+
+                    _buildDrawerItem(
+                      context,
+                      icon: Icons.baby_changing_station_outlined,
+                      title: 'Movement Track',
+                      onTap: () {
+                        Get.back();
+                        Get.toNamed(Routes.CLICK_COUNTER);
+                      },
+                    ),
+
+
                     _buildDrawerItem(
                       context,
                       icon: Icons.woman_outlined,
@@ -85,6 +97,17 @@ class CustomNavigationDrawer extends StatelessWidget {
                         Get.toNamed(Routes.FOOD);
                       },
                     ),
+
+                    _buildDrawerItem(
+                      context,
+                      icon: Icons.note_add_rounded,
+                      title: 'Notes',
+                      onTap: () {
+                        Get.back();
+                        Get.toNamed(Routes.NOTES);
+                      },
+                    ),
+
                     Divider(height: 1),
                     _buildDrawerItem(
                       context,

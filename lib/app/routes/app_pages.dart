@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:pregnancy/app/modules/notes/views/note_details.dart';
-import 'package:pregnancy/app/modules/notes/views/note_add.dart';
 
 import '../BeautyHomePage.dart';
 import '../MaternalHealthPage.dart';
 import '../PregnancyQAPage.dart';
 import '../baby_development_screen.dart';
 import '../food_nutrtion.dart';
+import '../modules/Checkup/bindings/checkup_binding.dart';
+import '../modules/Checkup/views/checkup_view.dart';
 import '../modules/ClickCounter/bindings/click_counter_binding.dart';
 import '../modules/ClickCounter/views/click_counter_view.dart';
 import '../modules/baby_model_week/bindings/baby_model_week_binding.dart';
@@ -19,6 +19,8 @@ import '../modules/home/views/home_view.dart';
 import '../modules/mother_care/bindings/mother_care_binding.dart';
 import '../modules/mother_care/views/mother_care_view.dart';
 import '../modules/notes/bindings/notes_binding.dart';
+import '../modules/notes/views/note_add.dart';
+import '../modules/notes/views/note_details.dart';
 import '../modules/notes/views/notes_view.dart';
 import '../modules/pregnancy_risks/bindings/pregnancy_risks_binding.dart';
 import '../modules/pregnancy_risks/views/pregnancy_risks_view.dart';
@@ -115,5 +117,10 @@ class AppPages {
     ),
     GetPage(name: _Paths.NOTESADD, page: () => AddNoteView()),
     GetPage(name: _Paths.NOTESEDIT, page: () => NoteDetailView()),
+    GetPage(
+      name: _Paths.CHECKUP,
+      page: () =>  CheckupView(),
+      binding: CheckupBinding(),
+    ),
   ];
 }

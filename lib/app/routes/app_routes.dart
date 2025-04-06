@@ -19,7 +19,7 @@ abstract class Routes {
   static const NOTES = _Paths.NOTES;
   static const NOTESEDIT = _Paths.NOTESEDIT;
   static const NOTESADD = _Paths.NOTESADD;
-
+  static const CHECKUP = _Paths.CHECKUP;
 }
 
 abstract class _Paths {
@@ -40,5 +40,5 @@ abstract class _Paths {
   static const NOTES = '/notes';
   static const NOTESEDIT = '/notesedit';
   static const NOTESADD = '/notesadd';
-
+  static const CHECKUP = '/checkup';
 }

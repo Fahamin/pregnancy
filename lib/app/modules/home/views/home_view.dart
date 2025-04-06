@@ -330,9 +330,9 @@ class HomeView extends GetView<HomeController> {
                     ),
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Routes.FOOD);
+                        Get.toNamed(Routes.CHECKUP);
                       },
-                      child: RowItem("assets/other/diet.png", "Foods"),
+                      child: RowItem("assets/other/check.png", "Checkup"),
                     ),
                   ],
                 ),
