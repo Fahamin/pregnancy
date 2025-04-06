@@ -315,6 +315,35 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     InkWell(
                       onTap: () {
+                        Get.toNamed(Routes.CLICK_COUNTER);
+                      },
+                      child: RowItem("assets/other/leg.png", "Click Counter"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        fatherDutyController.fetchWeekData(
+                          controller.currentWeek.value,
+                        );
+                        Get.toNamed(Routes.NOTES);
+                      },
+                      child: RowItem("assets/other/note.png", "Pregnancy Journal"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.FOOD);
+                      },
+                      child: RowItem("assets/other/diet.png", "Foods"),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {
                         Get.toNamed(Routes.ANSWERQUES);
                       },
                       child: RowItem("assets/other/faq.png", "FAQ"),

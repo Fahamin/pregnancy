@@ -15,6 +15,10 @@ abstract class Routes {
   static const BABY_DEVELOPMENT = _Paths.BABY_DEVELOPMENT;
   static const BEAUTYWOMER = _Paths.BEAUTYWOMER;
   static const SET_DATE = _Paths.SET_DATE;
+  static const CLICK_COUNTER = _Paths.CLICK_COUNTER;
+  static const NOTES = _Paths.NOTES;
+  static const NOTESEDIT = _Paths.NOTESEDIT;
+  static const NOTESADD = _Paths.NOTESADD;
 
 }
 
@@ -32,5 +36,9 @@ abstract class _Paths {
   static const BABY_DEVELOPMENT = '/babydevelopment';
   static const BEAUTYWOMER = '/beautywomer';
   static const SET_DATE = '/set_date';
+  static const CLICK_COUNTER = '/click-counter';
+  static const NOTES = '/notes';
+  static const NOTESEDIT = '/notesedit';
+  static const NOTESADD = '/notesadd';
 
 }
