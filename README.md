@@ -1,4 +1,3 @@
-# pregnancy
 🔹 Key Features:
 ✔ Week-by-week pregnancy progress tracking
 ✔ Due date calculator with personalized insights
