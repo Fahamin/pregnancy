@@ -1,16 +1,9 @@
 # pregnancy
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🔹 Key Features:
+✔ Week-by-week pregnancy progress tracking
+✔ Due date calculator with personalized insights
+✔ Clean, intuitive UI with smooth animations
+✔ Backed by GetX for reactive state management
+Flutter (Dart)
+GetX CLI (Routing, Dependency Injection, State Management)
+https://github.com/Fahamin/pregnancy/blob/1ee6d62ca4487d2f08b21ca0f314bc312027d211/Screenshot_33.png
