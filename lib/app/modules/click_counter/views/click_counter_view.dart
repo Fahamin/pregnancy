@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../HistoryView.dart';
+import '../../../history_view.dart';
 import '../controllers/click_counter_controller.dart';
 
 class ClickCounterView extends GetView<ClickCounterController> {

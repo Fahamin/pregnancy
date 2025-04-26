@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
 
-import '../BeautyHomePage.dart';
-import '../MaternalHealthPage.dart';
-import '../PregnancyQAPage.dart';
+import '../beauty_screen.dart';
+import '../maternal_health_screen.dart';
+import '../modules/click_counter/bindings/click_counter_binding.dart';
+import '../modules/click_counter/views/click_counter_view.dart';
+import '../pregnancy_qa_screen.dart';
 import '../baby_development_screen.dart';
 import '../food_nutrtion.dart';
 import '../modules/Checkup/bindings/checkup_binding.dart';
 import '../modules/Checkup/views/checkup_view.dart';
-import '../modules/ClickCounter/bindings/click_counter_binding.dart';
-import '../modules/ClickCounter/views/click_counter_view.dart';
 import '../modules/baby_model_week/bindings/baby_model_week_binding.dart';
 import '../modules/baby_model_week/views/baby_model_week_view.dart';
 import '../modules/father_duty/bindings/father_duty_binding.dart';
@@ -24,7 +24,7 @@ import '../modules/notes/views/note_details.dart';
 import '../modules/notes/views/notes_view.dart';
 import '../modules/pregnancy_risks/bindings/pregnancy_risks_binding.dart';
 import '../modules/pregnancy_risks/views/pregnancy_risks_view.dart';
-import '../problems_page.dart';
+import '../problems_screendart';
 
 part 'app_routes.dart';
 

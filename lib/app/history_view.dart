@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:pregnancy/app/modules/ClickCounter/controllers/click_counter_controller.dart';
+
+import 'modules/click_counter/controllers/click_counter_controller.dart';
 
 class HistoryView extends StatelessWidget {
   final ClickCounterController _counterController = Get.find();

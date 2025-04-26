@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../../db/DatabaseHelper.dart';
+import '../../../../db/database_helper.dart';
 
 class NotesController extends GetxController {
   final DatabaseHelper _database = DatabaseHelper.instance;

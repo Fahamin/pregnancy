@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../model/BabyDevelopment.dart';
+import '../model/baby_development_model.dart';
 
 class BabyDevelopment extends StatefulWidget {
   @override

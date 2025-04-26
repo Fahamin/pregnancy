@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../../model/WeekTip.dart';
+import '../../../../model/week_tip_model.dart';
 
 class FatherDutyController extends GetxController {
   final List<WeekTip> weekTips = [

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../db/DatabaseHelper.dart';
+import '../../../../db/database_helper.dart';
 
 class ClickCounterController extends GetxController {
   final DatabaseHelper _databaseHelper = DatabaseHelper.instance;

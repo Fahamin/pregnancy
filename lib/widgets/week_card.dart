@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pregnancy/app/modules/baby_model_week/controllers/baby_model_week_controller.dart';
 
-import 'WeekDetails.dart';
+import 'week_details.dart';
 
 class WeekCard extends StatelessWidget {
   final int index;

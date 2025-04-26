@@ -6,7 +6,7 @@ import 'package:pregnancy/app/modules/father_duty/controllers/father_duty_contro
 import 'package:pregnancy/app/routes/app_pages.dart';
 
 import '../../../../widgets/custom_nav_drawer.dart';
-import '../../../../widgets/RowItem.dart';
+import '../../../../widgets/row_item.dart';
 import '../../../../widgets/container_item.dart';
 import '../../../../widgets/container_vertical.dart';
 import '../../mother_care/controllers/mother_care_controller.dart';
@@ -332,7 +332,7 @@ class HomeView extends GetView<HomeController> {
                       onTap: () {
                         Get.toNamed(Routes.CHECKUP);
                       },
-                      child: RowItem("assets/other/check.png", "Checkup"),
+                      child: RowItem("assets/other/check.png", "checkup"),
                     ),
                   ],
                 ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:pregnancy/widgets/WeekCard.dart';
+import 'package:pregnancy/widgets/week_card.dart';
 
 import '../controllers/baby_model_week_controller.dart';
 
